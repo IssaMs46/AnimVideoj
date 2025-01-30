@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 5c814f53e810f994ca417f63a7da2750
+guid: 48721ed15c0cbdc44a2b14787528c916
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -31,7 +31,36 @@ ModelImporter:
     animationWrapMode: 0
     extraExposedTransformPaths: []
     extraUserProperties: []
-    clipAnimations: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Left Strafe Walk
+      takeName: mixamo.com
+      internalID: -203655887218126122
+      firstFrame: 0
+      lastFrame: 28
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 1
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     isReadable: 0
   meshes:
     lODScreenPercentages: []
@@ -77,18 +106,7 @@ ModelImporter:
     legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
     blendShapeNormalImportMode: 1
     normalSmoothingSource: 0
-  referencedClips:
-  - 569845d8750c67c46b236e8d6c68d904
-  - 48721ed15c0cbdc44a2b14787528c916
-  - 87829893c59acf24da6f66637931c307
-  - ccba57b02fc0a134a81e3c9c488daff2
-  - 32c8bfd932067f445a035e3d78328f7d
-  - 212289dd79d7858419791b7b855b2d7e
-  - 80ede7c3e4c1f7442ac2ee8312dd5c49
-  - 8af4d4e914fac674986d1efa3309bbfc
-  - 38d2bf5e5cf685143abe155003c200b4
-  - 0cb1812226217ea41a8224a0de0b7625
-  - 6ed0b7b632fd6094cabbd0633a007349
+  referencedClips: []
   importAnimation: 1
   humanDescription:
     serializedVersion: 3
@@ -876,11 +894,12 @@ ModelImporter:
     hasTranslationDoF: 0
     hasExtraRoot: 1
     skeletonHasParents: 1
-  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  lastHumanDescriptionAvatarSource: {fileID: 9000000, guid: 5c814f53e810f994ca417f63a7da2750,
+    type: 3}
   autoGenerateAvatarMappingIfUnspecified: 1
   animationType: 3
   humanoidOversampling: 1
-  avatarSetup: 1
+  avatarSetup: 2
   addHumanoidExtraRootOnlyWhenUsingAvatar: 1
   importBlendShapeDeformPercent: 1
   remapMaterialsIfMaterialImportModeIsNone: 0
