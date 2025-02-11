@@ -9,17 +9,23 @@ public class CharacterMovement : MonoBehaviour
     [SerializeField] private float speedY;
 
     private Animator animator;
+
+    private int speedXHash;
+    private int speedYHash;
     // Start is called before the first frame update
     private void Awake()
     {
         animator = GetComponent<Animator>();
+        speedXHash = Animator.StringToHash(name: "speedX");
+        speedYHash = Animator.StringToHash(name: "speedY");
     }
 
 
 #if UNITY_EDITOR
-    private void OnValidate()
+    private void Update()
     {
-        animator.SetFloat(name:"speedX", speedX);
+       
+        animator.SetFloat(name:"SpeedX", speedX);
         animator.SetFloat(name: "SpeedY", speedY);
     }
 
