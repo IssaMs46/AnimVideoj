@@ -1,32 +1,43 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 [RequireComponent(typeof(Animator))] 
 public class CharacterMovement : MonoBehaviour
 {
-    [SerializeField] private float speedX;
-    [SerializeField] private float speedY;
+    [SerializeField] private FloatDampener speedX;
+    [SerializeField] private FloatDampener speedY;
 
     private Animator animator;
 
     private int speedXHash;
     private int speedYHash;
-    // Start is called before the first frame update
+
+    public void OnMove(InputAction.CallbackContext ctx)
+    {
+        Vector2 inputValue  = ctx.ReadValue<Vector2>();
+        speedX.TargetValue = inputValue.x;
+        speedY.TargetValue = inputValue.y;
+
+    }
+
     private void Awake()
     {
         animator = GetComponent<Animator>();
-        speedXHash = Animator.StringToHash(name: "speedX");
-        speedYHash = Animator.StringToHash(name: "speedY");
+        speedXHash = Animator.StringToHash(name: "SpeedX");
+        speedYHash = Animator.StringToHash(name: "SpeedY");
     }
 
 
 #if UNITY_EDITOR
     private void Update()
     {
-       
-        animator.SetFloat(name:"SpeedX", speedX);
-        animator.SetFloat(name: "SpeedY", speedY);
+       speedX.Update();
+       speedY.Update();
+
+        animator.SetFloat(speedXHash, speedX.CurrentValue);
+        animator.SetFloat(speedYHash, speedY.CurrentValue);
     }
 
 #endif
