@@ -16,23 +16,29 @@ public class CharacterMovement : MonoBehaviour
     private int speedXHash;
     private int speedYHash;
 
+    Quaternion targetRotation;
+    private void SolveCharacterRotation()
+    {
+        Vector3 floorNormal = transform.up;
+        Vector3 cameraRealForward = camera.transform.forward;
+        float angleInterpolator = Mathf.Abs(Vector3.Dot(cameraRealForward, floorNormal));
+        Vector3 cameraForward = Vector3.Lerp(cameraRealForward, camera.transform.up, angleInterpolator).normalized;
+        Vector3 characterForward = Vector3.ProjectOnPlane(cameraForward, floorNormal);
+
+        Debug.DrawLine(transform.position, transform.position + characterForward * 2, Color.magenta, 5);
+
+        Quaternion lookRotation = Quaternion.LookRotation(characterForward, floorNormal);
+        targetRotation = Quaternion.RotateTowards(transform.rotation, lookRotation, angularSpeed);
+        
+    }
     public void OnMove(InputAction.CallbackContext ctx)
     {
         Vector2 inputValue  = ctx.ReadValue<Vector2>();
         speedX.TargetValue = inputValue.x;
         speedY.TargetValue = inputValue.y;
 
-        Vector3 floorNormal=transform.up;
-        Vector3 cameraRealForward = camera.transform.forward;
-        float angleInterpolator = Mathf.Abs(Vector3.Dot(cameraRealForward, floorNormal));
-        Vector3 cameraForward= Vector3.Lerp(cameraRealForward, camera.transform.up, angleInterpolator).normalized;
-        Vector3 characterForward = Vector3.ProjectOnPlane(cameraForward, floorNormal);
-
-        Debug.DrawLine(transform.position, transform.position + characterForward * 2, Color.magenta, 5);
-
-        Quaternion lookRotation = Quaternion.LookRotation(characterForward, floorNormal);
-        Quaternion targetRotation = Quaternion.RotateTowards(transform.rotation, lookRotation, angularSpeed);
-        transform.rotation = targetRotation;
+        SolveCharacterRotation();
+       // transform.rotation = targetRotation;
 
 
     }
@@ -53,6 +59,8 @@ public class CharacterMovement : MonoBehaviour
 
         animator.SetFloat(speedXHash, speedX.CurrentValue);
         animator.SetFloat(speedYHash, speedY.CurrentValue);
+
+        transform.rotation= Quaternion.RotateTowards(transform.rotation, targetRotation, angularSpeed);
     }
 
 #endif
