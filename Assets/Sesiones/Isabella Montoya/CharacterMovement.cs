@@ -40,6 +40,7 @@ public class CharacterMovement : MonoBehaviour
         SolveCharacterRotation();
        // transform.rotation = targetRotation;
 
+       // if (inputValue.magnitude > )
 
     }
 
