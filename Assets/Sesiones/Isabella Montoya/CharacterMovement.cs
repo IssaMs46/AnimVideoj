@@ -9,6 +9,7 @@ public class CharacterMovement : MonoBehaviour
     [SerializeField] private Camera camera;
     [SerializeField] private FloatDampener speedX;
     [SerializeField] private FloatDampener speedY;
+    [SerializeField] private float angularSpeed;
 
     private Animator animator;
 
@@ -28,6 +29,10 @@ public class CharacterMovement : MonoBehaviour
         Vector3 characterForward = Vector3.ProjectOnPlane(cameraForward, floorNormal);
 
         Debug.DrawLine(transform.position, transform.position + characterForward * 2, Color.magenta, 5);
+
+        Quaternion lookRotation = Quaternion.LookRotation(characterForward, floorNormal);
+        Quaternion targetRotation = Quaternion.RotateTowards(transform.rotation, lookRotation, angularSpeed);
+        transform.rotation = targetRotation;
 
 
     }
