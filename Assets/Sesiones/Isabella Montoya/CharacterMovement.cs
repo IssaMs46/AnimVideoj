@@ -35,12 +35,7 @@ public class CharacterMovement : MonoBehaviour
     {
         Vector2 inputValue  = ctx.ReadValue<Vector2>();
         speedX.TargetValue = inputValue.x;
-        speedY.TargetValue = inputValue.y;
-
-        SolveCharacterRotation();
-       // transform.rotation = targetRotation;
-
-       // if (inputValue.magnitude > )
+        speedY.TargetValue = inputValue.y;   
 
     }
 
@@ -60,8 +55,11 @@ public class CharacterMovement : MonoBehaviour
 
         animator.SetFloat(speedXHash, speedX.CurrentValue);
         animator.SetFloat(speedYHash, speedY.CurrentValue);
+        SolveCharacterRotation();
 
-        transform.rotation= Quaternion.RotateTowards(transform.rotation, targetRotation, angularSpeed);
+        float  motionMagnitude = Mathf.Sqrt(speedX.TargetValue * speedX.TargetValue + speedY.TargetValue * speedY.TargetValue);
+        float rotationSpeed = Mathf.SmoothStep(0, .1f, motionMagnitude);
+        transform.rotation= Quaternion.RotateTowards(transform.rotation, targetRotation, angularSpeed * rotationSpeed );
     }
 
 #endif
