@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using System;
 
-public class CharacterLook : MonoBehaviour
+public class CharacterLook : MonoBehaviour, ICharacterComponent
 {
     [SerializeField] private Transform target;
 
@@ -15,7 +15,11 @@ public class CharacterLook : MonoBehaviour
     [SerializeField] private float verticalRotationSpeed;
     [SerializeField] private Vector2 verticalRotationLimits;
 
+
+
     private float verticalRotation; 
+
+    public Character ParentCharacter { get; set; }
     public void OnLook(InputAction.CallbackContext ctx)
     {
         Vector2 inputValue = ctx.ReadValue<Vector2>();
@@ -31,6 +35,15 @@ public class CharacterLook : MonoBehaviour
             throw new NullReferenceException("Look target is null, assign it in inspector");
            
         }
+
+        if (ParentCharacter.LockTarget != null)
+        {
+            Vector3 lookDirection = (ParentCharacter.LockTarget.position - transform.position).normalized;
+            Quaternion rotation = Quaternion.LookRotation(lookDirection, Vector3.up);
+            transform.rotation = rotation;
+            return;
+        }
+
         target.RotateAround(target.position, transform.up, horizontalDampener.CurrentValue * horizontalRotationSpeed * Time.deltaTime);
 
         //Quaternion horizontalRotation = Quaternion.AngleAxis(horizontalDampener.CurrentValue * horizontalRotationSpeed * Time.deltaTime, transform.up);

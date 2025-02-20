@@ -47,7 +47,7 @@ public class CharacterMovement : MonoBehaviour
     }
 
 
-#if UNITY_EDITOR
+
     private void Update()
     {
        speedX.Update();
@@ -62,5 +62,5 @@ public class CharacterMovement : MonoBehaviour
         transform.rotation= Quaternion.RotateTowards(transform.rotation, targetRotation, angularSpeed * rotationSpeed );
     }
 
-#endif
+
 }
