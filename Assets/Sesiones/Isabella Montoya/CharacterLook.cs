@@ -13,13 +13,13 @@ public class CharacterLook : MonoBehaviour
 
     [SerializeField] private float horizontalRotationSpeed;
     [SerializeField] private float verticalRotationSpeed;
+    [SerializeField] private Vector2 verticalRotationLimits;
 
+    private float verticalRotation; 
     public void OnLook(InputAction.CallbackContext ctx)
     {
         Vector2 inputValue = ctx.ReadValue<Vector2>();
-      
         inputValue = inputValue / new Vector2(Screen.width, Screen.height);
-
         horizontalDampener.TargetValue = inputValue.x;
         verticalDampener.TargetValue = inputValue.y;
     }
@@ -31,9 +31,16 @@ public class CharacterLook : MonoBehaviour
             throw new NullReferenceException("Look target is null, assign it in inspector");
            
         }
+        target.RotateAround(target.position, transform.up, horizontalDampener.CurrentValue * horizontalRotationSpeed * Time.deltaTime);
 
-        Quaternion horizontalRotation = Quaternion.AngleAxis(horizontalDampener.CurrentValue * horizontalRotationSpeed, transform.up);
-        target.transform.rotation *= horizontalRotation;
+        //Quaternion horizontalRotation = Quaternion.AngleAxis(horizontalDampener.CurrentValue * horizontalRotationSpeed * Time.deltaTime, transform.up);
+        //target.transform.rotation *= horizontalRotation;
+
+        verticalRotation += verticalDampener.CurrentValue * verticalRotationSpeed * Time.deltaTime;
+        verticalRotation = Mathf.Clamp(verticalRotation, verticalRotationLimits.x, verticalRotationLimits.y);
+        Vector3 euler = target.localEulerAngles;
+        euler.x = verticalRotation; 
+        target.localEulerAngles = euler;
     }
 
     private void Update()

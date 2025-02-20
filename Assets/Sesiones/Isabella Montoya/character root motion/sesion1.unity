@@ -193,11 +193,7 @@ PrefabInstance:
       objectReference: {fileID: 9100000, guid: 954271b3ff81dad409007070a392af27, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects:
-    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 5c814f53e810f994ca417f63a7da2750,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1577505706}
+    m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 5c814f53e810f994ca417f63a7da2750,
         type: 3}
@@ -781,12 +777,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1577505705}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.006458546, y: -0.000000017584803, z: 0.0000007343956, w: 0.99997914}
-  m_LocalPosition: {x: 0, y: 1.0427046, z: 0.01554256}
+  m_LocalRotation: {x: 0.0000007343956, y: 0.99997914, z: -0.006458546, w: 0.000000017584803}
+  m_LocalPosition: {x: 0, y: 1.0427046, z: -0.01554256}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1620414867}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1818360608 &1577505707
 PositionConstraint:
@@ -798,7 +794,7 @@ PositionConstraint:
   m_Enabled: 1
   serializedVersion: 2
   m_Weight: 1
-  m_TranslationAtRest: {x: 0, y: 1.0427046, z: 0.01554256}
+  m_TranslationAtRest: {x: 0, y: 1.0427046, z: -0.01554256}
   m_TranslationOffset: {x: 0, y: 0, z: 0}
   m_AffectTranslationX: 1
   m_AffectTranslationY: 1
@@ -895,12 +891,6 @@ MonoBehaviour:
   m_DefaultActionMap: Character
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
---- !u!4 &1620414867 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 5c814f53e810f994ca417f63a7da2750,
-    type: 3}
-  m_PrefabInstance: {fileID: 214852181}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1620414868
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -915,11 +905,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 1577505706}
   horizontalDampener:
-    smoothTime: 0.2
+    smoothTime: 0
   verticalDampener:
     smoothTime: 0
-  horizontalRotationSpeed: 90
-  verticalRotationSpeed: 0
+  horizontalRotationSpeed: 3600
+  verticalRotationSpeed: 3600
+  verticalRotationLimits: {x: -60, y: 75}
 --- !u!1 &1813787631
 GameObject:
   m_ObjectHideFlags: 0
@@ -1045,6 +1036,7 @@ SceneRoots:
   - {fileID: 515580861}
   - {fileID: 1813787633}
   - {fileID: 1421152688}
+  - {fileID: 1577505706}
   - {fileID: 214852181}
   - {fileID: 375618342}
   - {fileID: 336413434}

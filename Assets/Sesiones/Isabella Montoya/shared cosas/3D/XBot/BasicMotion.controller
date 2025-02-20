@@ -115,10 +115,28 @@ BlendTree:
     m_CycleOffset: 0
     m_DirectBlendParameter: SpeedX
     m_Mirror: 0
+  - serializedVersion: 2
+    m_Motion: {fileID: -203655887218126122, guid: 8c67b5bfbafec7d4f842677f3f395239,
+      type: 3}
+    m_Threshold: 3.2000003
+    m_Position: {x: -0.5, y: -0.5}
+    m_TimeScale: 1
+    m_CycleOffset: 0
+    m_DirectBlendParameter: SpeedX
+    m_Mirror: 0
+  - serializedVersion: 2
+    m_Motion: {fileID: -203655887218126122, guid: e47d88a9fe3728843a18e7fa45e2dbbe,
+      type: 3}
+    m_Threshold: 4.0800004
+    m_Position: {x: 0.5, y: -0.5}
+    m_TimeScale: 1
+    m_CycleOffset: 0
+    m_DirectBlendParameter: SpeedX
+    m_Mirror: 0
   m_BlendParameter: SpeedX
   m_BlendParameterY: SpeedY
   m_MinThreshold: -1
-  m_MaxThreshold: 2.7600002
+  m_MaxThreshold: 4.0800004
   m_UseAutomaticThresholds: 0
   m_NormalizedBlendValues: 0
   m_BlendType: 2
@@ -136,13 +154,13 @@ AnimatorController:
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: SpeedY
     m_Type: 1
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   m_AnimatorLayers:
   - serializedVersion: 5
     m_Name: Base Layer
