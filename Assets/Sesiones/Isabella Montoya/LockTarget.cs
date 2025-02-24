@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class LookTarget : MonoBehaviour, ICharacterComponent
+public class LockTarget : MonoBehaviour
 {
     [SerializeField] private Camera camera;
     [SerializeField] private LayerMask detectionMask;
@@ -38,7 +38,7 @@ public class LookTarget : MonoBehaviour, ICharacterComponent
            
         }
 
-        ParentCharacter.Locktarge = detectedObjects[closestObject].transform;
+        
     }
 
 

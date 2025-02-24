@@ -2,9 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[DefaultExecutionOrder(-1)]
 public class Character : MonoBehaviour
 {
-    [SerializeField] Transform LookTarget;
+    [SerializeField] Transform lockTarget;
 
     public Transform LockTarget
     {
@@ -18,5 +19,10 @@ public class Character : MonoBehaviour
         {
             characterComponent.ParentCharacter = this;
         }
+    }
+
+    private void Awake()
+    {
+        RegisterComponents();
     }
 }

@@ -19,7 +19,7 @@ public class CharacterLook : MonoBehaviour, ICharacterComponent
 
     private float verticalRotation; 
 
-    public Character ParentCharacter { get; set; }
+    [field:SerializeField] public Character ParentCharacter { get; set; }
     public void OnLook(InputAction.CallbackContext ctx)
     {
         Vector2 inputValue = ctx.ReadValue<Vector2>();
@@ -40,15 +40,11 @@ public class CharacterLook : MonoBehaviour, ICharacterComponent
         {
             Vector3 lookDirection = (ParentCharacter.LockTarget.position - transform.position).normalized;
             Quaternion rotation = Quaternion.LookRotation(lookDirection, Vector3.up);
-            transform.rotation = rotation;
+            target.rotation = rotation;
             return;
         }
 
         target.RotateAround(target.position, transform.up, horizontalDampener.CurrentValue * horizontalRotationSpeed * Time.deltaTime);
-
-        //Quaternion horizontalRotation = Quaternion.AngleAxis(horizontalDampener.CurrentValue * horizontalRotationSpeed * Time.deltaTime, transform.up);
-        //target.transform.rotation *= horizontalRotation;
-
         verticalRotation += verticalDampener.CurrentValue * verticalRotationSpeed * Time.deltaTime;
         verticalRotation = Mathf.Clamp(verticalRotation, verticalRotationLimits.x, verticalRotationLimits.y);
         Vector3 euler = target.localEulerAngles;
