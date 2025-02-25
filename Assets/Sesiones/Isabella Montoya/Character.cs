@@ -4,7 +4,7 @@ using UnityEngine;
 [DefaultExecutionOrder(-1)]
 public class Character : MonoBehaviour
 {
-    [SerializeField] Transform lockTarget;
+    Transform lockTarget;
 
     public Transform LockTarget
     {

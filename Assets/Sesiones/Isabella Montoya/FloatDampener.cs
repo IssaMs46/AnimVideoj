@@ -8,8 +8,8 @@ public struct FloatDampener
 
     [SerializeField] private float smoothTime;
 
-    private float currentValue;
-    public float TargetValue{ get; set; }
+    [SerializeField] private float currentValue;
+    [field:SerializeField] public float TargetValue{ get; set; }
     private float currentVelocity;
     public float CurrentValue { get; private set; }
 

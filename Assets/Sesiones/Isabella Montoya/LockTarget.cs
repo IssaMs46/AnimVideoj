@@ -6,18 +6,12 @@ using UnityEngine.InputSystem;
 
 public class LockTarget : MonoBehaviour
 {
-    [SerializeField] private Transform target;
     [SerializeField] private Camera camera;
     [SerializeField] private LayerMask detectionMask;
     [SerializeField] private float detectionRadius;
     [SerializeField] private float detectionAngle;
 
     public Character ParentCharacter { get;set; }
-    private void ApplyRotation()
-    {
-        if (target== null) return;
-       
-    }
     public void OnLock(InputAction.CallbackContext ctx)
     {
         if (!ctx.started) return;
