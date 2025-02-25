@@ -8,8 +8,8 @@ public class Character : MonoBehaviour
 
     public Transform LockTarget
     {
-        get => LockTarget;
-        set => LockTarget =value;
+        get => lockTarget;
+        set => lockTarget =value;
     }
 
     private void RegisterComponents()

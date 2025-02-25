@@ -1,14 +1,25 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class LockTarget : MonoBehaviour
 {
+    [SerializeField] private Transform target;
     [SerializeField] private Camera camera;
     [SerializeField] private LayerMask detectionMask;
     [SerializeField] private float detectionRadius;
     [SerializeField] private float detectionAngle;
+
+    private void ApplyRotation()
+    {
+        if (target== null) return;
+        Vector3 lookDirection = (target.position - transform.position).normalized;
+        lookDirection = Vector3.ProjectOnPlane(lookDirection, Vector3.up);
+        Quaternion rotation = Quaternion.LookRotation(lookDirection, Vector3.up);
+        transform.rotation = rotation;
+    }
     public void Lock(InputAction.CallbackContext ctx)
     {
         if (!ctx.started) return;
@@ -19,6 +30,8 @@ public class LockTarget : MonoBehaviour
         float nearestDistance = detectionRadius;
         int closestObject;
         Vector3 cameraForward = camera.transform.forward;
+
+        
 
         for (int i = 0; i < detectedObjects.Length; i++)
         {

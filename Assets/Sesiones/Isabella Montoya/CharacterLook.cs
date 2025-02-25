@@ -15,8 +15,6 @@ public class CharacterLook : MonoBehaviour, ICharacterComponent
     [SerializeField] private float verticalRotationSpeed;
     [SerializeField] private Vector2 verticalRotationLimits;
 
-
-
     private float verticalRotation; 
 
     [field:SerializeField] public Character ParentCharacter { get; set; }
@@ -45,6 +43,7 @@ public class CharacterLook : MonoBehaviour, ICharacterComponent
         }
 
         target.RotateAround(target.position, transform.up, horizontalDampener.CurrentValue * horizontalRotationSpeed * Time.deltaTime);
+
         verticalRotation += verticalDampener.CurrentValue * verticalRotationSpeed * Time.deltaTime;
         verticalRotation = Mathf.Clamp(verticalRotation, verticalRotationLimits.x, verticalRotationLimits.y);
         Vector3 euler = target.localEulerAngles;
