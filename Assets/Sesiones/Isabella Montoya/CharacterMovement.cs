@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Rendering;
 
 [RequireComponent(typeof(Animator))] 
 public class CharacterMovement : MonoBehaviour, ICharacterComponent
@@ -10,6 +11,8 @@ public class CharacterMovement : MonoBehaviour, ICharacterComponent
     [SerializeField] private FloatDampener speedX;
     [SerializeField] private FloatDampener speedY;
     [SerializeField] private float angularSpeed;
+    [SerializeField] private Transform aimTarget;
+    [SerializeField] private float rotationTreshold;
 
     private Animator animator;
 
@@ -27,15 +30,25 @@ public class CharacterMovement : MonoBehaviour, ICharacterComponent
 
         Debug.DrawLine(transform.position, transform.position + characterForward * 2, Color.magenta, 5);
 
-        Quaternion lookRotation = Quaternion.LookRotation(characterForward, floorNormal);
-        targetRotation = Quaternion.RotateTowards(transform.rotation, lookRotation, angularSpeed);
-        
+        //Quaternion lookRotation = Quaternion.LookRotation(characterForward, floorNormal);
+        //targetRotation = Quaternion.RotateTowards(transform.rotation, lookRotation, angularSpeed);
+        targetRotation = Quaternion.LookRotation(characterForward, floorNormal);
     }
 
     private void ApplyCharacterRotation()
     {
         float motionMagnitude = Mathf.Sqrt(speedX.TargetValue * speedX.TargetValue + speedY.TargetValue * speedY.TargetValue);
         float rotationSpeed =ParentCharacter.IsAiming? 1 : Mathf.SmoothStep(0, .1f, motionMagnitude);
+        transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, angularSpeed * rotationSpeed);
+    }
+
+    private void ApplyCharacterRotationFromAim()
+    {
+        Vector3 aimForward = Vector3.ProjectOnPlane(aimTarget.forward, transform.up).normalized;
+        Vector3 characterForward = transform.forward;
+        float angleCos = Vector3.Dot(characterForward, aimForward); //-1 , 1
+
+        float rotationSpeed = Mathf.SmoothStep(0f, 1f, Mathf.Acos(angleCos) * Mathf.Rad2Deg / rotationTreshold);
         transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, angularSpeed * rotationSpeed);
     }
     public void OnMove(InputAction.CallbackContext ctx)
@@ -64,7 +77,8 @@ public class CharacterMovement : MonoBehaviour, ICharacterComponent
         animator.SetFloat(speedYHash, speedY.CurrentValue);
         SolveCharacterRotation();
 
-        ApplyCharacterRotation();
+        if(!ParentCharacter.IsAiming) ApplyCharacterRotation();
+        //else ApplyCharacterRotationFromAim();
    
     }
 

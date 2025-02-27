@@ -132,6 +132,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 56950624}
+  - component: {fileID: 56950625}
   m_Layer: 0
   m_Name: AimTarget
   m_TagString: Untagged
@@ -147,13 +148,40 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 56950623}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.00000006394334, y: 1.415, z: 1.41}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.0000006686025, y: 1.415, z: 1.4099998}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1816075946}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1773428102 &56950625
+ParentConstraint:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 56950623}
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Weight: 1
+  m_TranslationAtRest: {x: 0, y: 1.415, z: 1.41}
+  m_RotationAtRest: {x: 0, y: 0, z: 0}
+  m_TranslationOffsets:
+  - {x: 0, y: 0.3902763, z: 1.3895322}
+  m_RotationOffsets:
+  - {x: -0.7400998, y: 0, z: -0.00008417377}
+  m_AffectTranslationX: 1
+  m_AffectTranslationY: 1
+  m_AffectTranslationZ: 1
+  m_AffectRotationX: 1
+  m_AffectRotationY: 1
+  m_AffectRotationZ: 1
+  m_Active: 1
+  m_IsLocked: 1
+  m_Sources:
+  - sourceTransform: {fileID: 1904524199}
+    weight: 1
 --- !u!1001 &375618342
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1034,6 +1062,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   aimingCamera: {fileID: 1171105149}
   aimConstraint: {fileID: 2002979460}
+  aimDampener:
+    smoothTime: 0.1
+    currentValue: 0
+    <TargetValue>k__BackingField: 0
 --- !u!4 &1904524199 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 216585463811474591, guid: 60f0aaf1a8110ad49a87251c82a06563,
@@ -1256,8 +1288,18 @@ PrefabInstance:
       objectReference: {fileID: 1575438472}
     - target: {fileID: 6718422711113618805, guid: 60f0aaf1a8110ad49a87251c82a06563,
         type: 3}
+      propertyPath: aimTarget
+      value: 
+      objectReference: {fileID: 56950624}
+    - target: {fileID: 6718422711113618805, guid: 60f0aaf1a8110ad49a87251c82a06563,
+        type: 3}
       propertyPath: angularSpeed
       value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 6718422711113618805, guid: 60f0aaf1a8110ad49a87251c82a06563,
+        type: 3}
+      propertyPath: rotationTreshold
+      value: 360
       objectReference: {fileID: 0}
     - target: {fileID: 7292572940511005628, guid: 60f0aaf1a8110ad49a87251c82a06563,
         type: 3}
