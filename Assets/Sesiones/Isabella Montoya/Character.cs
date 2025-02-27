@@ -5,7 +5,7 @@ using UnityEngine;
 public class Character : MonoBehaviour
 {
     Transform lockTarget;
-    private bool isAiming;
+    [SerializeField] private bool isAiming;
 
     public Transform LockTarget
     {
@@ -30,5 +30,6 @@ public class Character : MonoBehaviour
     private void Awake()
     {
         RegisterComponents();
+        Cursor.lockState = CursorLockMode.Locked;
     }
 }
