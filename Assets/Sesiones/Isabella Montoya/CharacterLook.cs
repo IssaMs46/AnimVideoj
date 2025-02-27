@@ -6,7 +6,7 @@ using System;
 
 public class CharacterLook : MonoBehaviour, ICharacterComponent
 {
-    [SerializeField] private Transform target;
+    [SerializeField] public Transform target;
 
     [SerializeField] private FloatDampener horizontalDampener;
     [SerializeField] private FloatDampener verticalDampener;
@@ -22,7 +22,7 @@ public class CharacterLook : MonoBehaviour, ICharacterComponent
     {
         Vector2 inputValue = ctx.ReadValue<Vector2>();
         inputValue = inputValue / new Vector2(Screen.width, Screen.height);
-        Debug.Log(inputValue);
+        //Debug.Log(inputValue);
         horizontalDampener.TargetValue = inputValue.x;
         verticalDampener.TargetValue = inputValue.y;
     }
@@ -42,6 +42,8 @@ public class CharacterLook : MonoBehaviour, ICharacterComponent
             target.rotation = rotation;
             return;
         }
+
+      #warning Reset rotation while locked
 
         target.RotateAround(target.position, transform.up, horizontalDampener.CurrentValue * horizontalRotationSpeed * Time.deltaTime);
 

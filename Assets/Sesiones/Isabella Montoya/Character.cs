@@ -5,11 +5,18 @@ using UnityEngine;
 public class Character : MonoBehaviour
 {
     Transform lockTarget;
+    private bool isAiming;
 
     public Transform LockTarget
     {
         get => lockTarget;
         set => lockTarget =value;
+    }
+
+    public bool IsAiming
+    {
+        get => isAiming;
+        set => isAiming = value;
     }
 
     private void RegisterComponents()
