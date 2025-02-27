@@ -50,8 +50,8 @@ public class CharacterMovement : MonoBehaviour
 
     private void Update()
     {
-       speedX.Update();
-       speedY.Update();
+        speedX.Update();
+        speedY.Update();
 
         animator.SetFloat(speedXHash, speedX.CurrentValue);
         animator.SetFloat(speedYHash, speedY.CurrentValue);
@@ -59,7 +59,7 @@ public class CharacterMovement : MonoBehaviour
 
         float  motionMagnitude = Mathf.Sqrt(speedX.TargetValue * speedX.TargetValue + speedY.TargetValue * speedY.TargetValue);
         float rotationSpeed = Mathf.SmoothStep(0, .1f, motionMagnitude);
-        transform.rotation= Quaternion.RotateTowards(transform.rotation, targetRotation, angularSpeed * rotationSpeed );
+        transform.rotation= Quaternion.RotateTowards(transform.rotation, targetRotation, angularSpeed * rotationSpeed);
     }
 
 
