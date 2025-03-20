@@ -48,7 +48,7 @@ public class WeaponCollisionAdjust : MonoBehaviour
     {
         Vector3 originalIKPosition = anim.GetIKPosition(AvatarIKGoal.RightHand);
         anim.SetIKPositionWeight(AvatarIKGoal.RightHand, 1);
-        anim.SetIKPosition(AvatarIKGoal.RightHand, originalIKPosition * weaponReference.forward  * offset);
+       // anim.SetIKPosition(AvatarIKGoal.RightHand, originalIKPosition * weaponReference.forward  * offset); 
     }
 
 
