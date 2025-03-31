@@ -6,6 +6,7 @@ public class Character : MonoBehaviour
 {
     Transform lockTarget;
     [SerializeField] private bool isAiming;
+    [SerializeField] private bool isJumping;
 
     public Transform LockTarget
     {
@@ -18,6 +19,12 @@ public class Character : MonoBehaviour
         get => isAiming;
         set => isAiming = value;
     }
+    public bool IsJumping
+    {
+        get => isJumping;
+        set => isJumping = value;
+    }
+
 
     private void RegisterComponents()
     {
