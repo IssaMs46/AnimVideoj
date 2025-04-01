@@ -1287,7 +1287,19 @@ MonoBehaviour:
     m_ActionId: 63c3ee6c-3881-404d-a002-3da8e8d788ac
     m_ActionName: Character/WeaponAction[/Mouse/leftButton]
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1678880122}
+        m_TargetAssemblyTypeName: CharacterJump, Assembly-CSharp
+        m_MethodName: OnJmp
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: f93e86b5-9881-4e20-a3dd-b46bcba3c9ff
     m_ActionName: Character/Jump[/Keyboard/space]
   m_NeverAutoSwitchControlSchemes: 0
@@ -1367,6 +1379,18 @@ MonoBehaviour:
     smoothTime: 0.1
     currentValue: 0
     <TargetValue>k__BackingField: 0
+--- !u!114 &1678880122
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1678880113}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8349d936a467dd74cb78adbbe25adea0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1812911023
 GameObject:
   m_ObjectHideFlags: 0
@@ -1736,6 +1760,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 1678880120}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 15e0442f0d33d934581e757a7d830cfc,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1678880122}
     - targetCorrespondingSourceObject: {fileID: -8797748600653496986, guid: 15e0442f0d33d934581e757a7d830cfc,
         type: 3}
       insertIndex: -1
