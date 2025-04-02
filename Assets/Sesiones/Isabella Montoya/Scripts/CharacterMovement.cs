@@ -37,9 +37,18 @@ public class CharacterMovement : MonoBehaviour, ICharacterComponent
 
     private void ApplyCharacterRotation()
     {
+        //float motionMagnitude = Mathf.Sqrt(speedX.TargetValue * speedX.TargetValue + speedY.TargetValue * speedY.TargetValue);
+        //float rotationSpeed =ParentCharacter.IsAiming? 1 : Mathf.SmoothStep(0, .1f, motionMagnitude);
+        //transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, angularSpeed * rotationSpeed);
+
         float motionMagnitude = Mathf.Sqrt(speedX.TargetValue * speedX.TargetValue + speedY.TargetValue * speedY.TargetValue);
-        float rotationSpeed =ParentCharacter.IsAiming? 1 : Mathf.SmoothStep(0, .1f, motionMagnitude);
+
+        // Evita la rotación si no hay entrada de movimiento
+        if (motionMagnitude < 0.01f) return;
+
+        float rotationSpeed = ParentCharacter.IsAiming ? 1 : Mathf.SmoothStep(0, .1f, motionMagnitude);
         transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, angularSpeed * rotationSpeed);
+
     }
 
     private void ApplyCharacterRotationFromAim()

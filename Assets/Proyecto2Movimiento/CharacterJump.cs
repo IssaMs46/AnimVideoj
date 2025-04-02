@@ -20,22 +20,21 @@ public class CharacterJump : MonoBehaviour, ICharacterComponent
 
     private void Update()
     {
-        // Verifica si el personaje está en el suelo
         isGrounded = Physics.Raycast(transform.position, Vector3.down, 1.1f);
 
-        // Si el personaje está en el suelo, desactiva la animación de salto
         if (isGrounded)
         {
-            anim.SetBool("Jump", false);
+            anim.ResetTrigger("Jump"); // Resetea el trigger para que vuelva a Locomotion
+            rb.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ;
         }
     }
 
     public void OnJump(InputAction.CallbackContext ctx)
     {
-        if (ctx.started && isGrounded) // Solo salta si está en el suelo
+        if (ctx.started && isGrounded)
         {
             Debug.Log("Jumping!");
-            anim.SetBool("Jump", true);
+            anim.SetTrigger("Jump"); // Usamos SetTrigger en vez de SetBool
             rb.velocity = new Vector3(rb.velocity.x, 0f, rb.velocity.z);
             rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
         }
