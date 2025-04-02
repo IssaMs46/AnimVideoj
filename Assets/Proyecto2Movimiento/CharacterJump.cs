@@ -4,48 +4,42 @@ using UnityEngine;
 using UnityEngine.Animations;
 using UnityEngine.InputSystem;
 
-[RequireComponent(typeof(Animator))]
+[RequireComponent(typeof(Rigidbody), typeof(Animator))]
 public class CharacterJump : MonoBehaviour, ICharacterComponent
 {
-    private Animator anim;
     private Rigidbody rb;
-
+    private Animator anim;
     [SerializeField] private float jumpForce = 5f;
-
-    // Start is called before the first frame update
+    private bool isGrounded;
 
     private void Awake()
     {
-        anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody>();
+        anim = GetComponent<Animator>();
+    }
+
+    private void Update()
+    {
+        // Verifica si el personaje está en el suelo
+        isGrounded = Physics.Raycast(transform.position, Vector3.down, 1.1f);
+
+        // Si el personaje está en el suelo, desactiva la animación de salto
+        if (isGrounded)
+        {
+            anim.SetBool("Jump", false);
+        }
     }
 
     public void OnJump(InputAction.CallbackContext ctx)
     {
-        if (!ctx.started && !ctx.canceled) return;
-
-        Debug.Log("OnJump called"); // Verificación de que el método se ejecuta
-
-        if (ctx.started && IsGrounded())
+        if (ctx.started && isGrounded) // Solo salta si está en el suelo
         {
+            Debug.Log("Jumping!");
+            anim.SetBool("Jump", true);
+            rb.velocity = new Vector3(rb.velocity.x, 0f, rb.velocity.z);
             rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
-            anim.SetTrigger("Jump");
-            ParentCharacter.IsJumping = true;
         }
-
-        if (ctx.canceled)
-        {
-            ParentCharacter.IsJumping = false;
-        }
-
     }
-
-    private bool IsGrounded()
-    {
-        return Physics.Raycast(transform.position, Vector3.down, 1.1f);
-    }
-
 
     public Character ParentCharacter { get; set; }
-
 }
