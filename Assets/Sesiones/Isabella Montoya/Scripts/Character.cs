@@ -22,7 +22,11 @@ public class Character : MonoBehaviour
     public bool IsJumping
     {
         get => isJumping;
-        set => isJumping = value;
+        set
+        {
+            isJumping = value;
+            Debug.Log($"IsJumping set to: {isJumping}");
+        }
     }
 
 
