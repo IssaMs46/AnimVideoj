@@ -19,13 +19,13 @@ public class AttackController : MonoBehaviour
     {
         if (ctx.performed)
         {
-            anim.SetTrigger("Attack");
+            anim.SetTrigger("LightAttack");
         }
     }
 
     public void OnHeavyAttack(CallbackContext ctx)
     {
-        if (ctx.performed)
+        if (ctx.performed || ctx.canceled)
         {
             anim.SetTrigger("HeavyAttack");
         }
