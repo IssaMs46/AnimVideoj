@@ -6,14 +6,21 @@ using CallbackContext = UnityEngine.InputSystem.InputAction.CallbackContext;
 
 
 [RequireComponent(typeof(Animator))]
+[RequireComponent(typeof(CharacterState))]
 public class AttackController : MonoBehaviour
 {
 
+    [SerializeField] private float lightAttackCost;
+    [SerializeField] private float heavyAttackCost;
+
     private Animator anim;
+
+    private CharacterState characterState;
 
     private void Awake()
     {
         anim= GetComponent<Animator>();
+        characterState= GetComponent<CharacterState>();
     }
     public void OnLightAttack(CallbackContext ctx)
     {
