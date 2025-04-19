@@ -13,7 +13,8 @@ public class CharacterState : MonoBehaviour
 
     private void RegenerateStamina (float regenAmount)
     {
-        currentStamina = Mathf.Min(currentStamina * regenAmount, startStamina);
+       
+        currentStamina = Mathf.Min(currentStamina + regenAmount, startStamina);
     }
 
     private float GetStaminaDepletion()
@@ -27,6 +28,13 @@ public class CharacterState : MonoBehaviour
         currentStamina -= GetStaminaDepletion() * amount;
     }
 
+
+
+    private void Start()
+    {
+        currentStamina = startStamina;
+
+    }
     public void Update()
     {
         RegenerateStamina(staminaRegen * Time.deltaTime);

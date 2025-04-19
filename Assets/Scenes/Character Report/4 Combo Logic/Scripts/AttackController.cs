@@ -6,7 +6,6 @@ using CallbackContext = UnityEngine.InputSystem.InputAction.CallbackContext;
 
 
 [RequireComponent(typeof(Animator))]
-[RequireComponent(typeof(CharacterState))]
 public class AttackController : MonoBehaviour
 {
 
@@ -15,18 +14,19 @@ public class AttackController : MonoBehaviour
 
     private Animator anim;
 
-    private CharacterState characterState;
-
     private void Awake()
     {
         anim= GetComponent<Animator>();
-        characterState= GetComponent<CharacterState>();
     }
     public void OnLightAttack(CallbackContext ctx)
     {
         if (ctx.performed)
         {
-            anim.SetTrigger("LightAttack");
+           if (Game.Instance.PlayerOne.CurrentStamina > 0)
+            {
+                anim.SetTrigger("LightAttack");
+            }
+               
         }
     }
 
@@ -34,7 +34,23 @@ public class AttackController : MonoBehaviour
     {
         if (ctx.performed || ctx.canceled)
         {
-            anim.SetTrigger("HeavyAttack");
+
+            if (Game.Instance.PlayerOne.CurrentStamina > 0)
+            {
+                anim.SetTrigger("HeavyAttack");
+            }
+                
         }
+    }
+
+    public void DepleteStamina(float amount)
+    {
+        Game.Instance.PlayerOne.DepleteStamina(amount);
+    }
+
+    public void DepleteStaminaWithParameter(string parameter)
+    {
+        float motionValue = GetComponent<Animator>().GetFloat(parameter);
+        DepleteStamina(motionValue);
     }
 }

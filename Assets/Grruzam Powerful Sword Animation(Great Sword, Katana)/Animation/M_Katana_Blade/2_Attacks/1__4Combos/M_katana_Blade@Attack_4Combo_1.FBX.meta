@@ -531,14 +531,7 @@ ModelImporter:
           preInfinity: 3
           postInfinity: 3
           rotationOrder: 4
-      events:
-      - time: 0.21318343
-        functionName: DepleteStamina
-        data: 
-        objectReferenceParameter: {instanceID: 0}
-        floatParameter: 0.7
-        intParameter: 0
-        messageOptions: 0
+      events: []
       transformMask:
       - path: 
         weight: 1
@@ -728,6 +721,31 @@ ModelImporter:
             tangentMode: 0
             weightedMode: 0
             inWeight: 0
+            outWeight: 0
+          preInfinity: 3
+          postInfinity: 3
+          rotationOrder: 4
+      - name: StaminaMV
+        curve:
+          serializedVersion: 2
+          curve:
+          - serializedVersion: 3
+            time: 0
+            value: 0.5
+            inSlope: 0.18662849
+            outSlope: 0.18662849
+            tangentMode: 0
+            weightedMode: 0
+            inWeight: 0
+            outWeight: 0.07373272
+          - serializedVersion: 3
+            time: 1
+            value: 0.7
+            inSlope: 0.22279915
+            outSlope: 0.22279915
+            tangentMode: 0
+            weightedMode: 0
+            inWeight: 0.0541476
             outWeight: 0
           preInfinity: 3
           postInfinity: 3
@@ -944,7 +962,14 @@ ModelImporter:
           preInfinity: 3
           postInfinity: 3
           rotationOrder: 4
-      events: []
+      events:
+      - time: 0.050450455
+        functionName: DepleteStaminaWithParameter
+        data: PersistentStaminaMV
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
       transformMask:
       - path: 
         weight: 1
