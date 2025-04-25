@@ -1090,11 +1090,18 @@ ModelImporter:
           postInfinity: 3
           rotationOrder: 4
       events:
-      - time: 0.239281
-        functionName: DepleteStamina
+      - time: 0.2732042
+        functionName: ToggleAttackHitbox
         data: 
         objectReferenceParameter: {instanceID: 0}
-        floatParameter: 0.4
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.41691023
+        functionName: ToggleAttackHitbox
+        data: 
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
         intParameter: 0
         messageOptions: 0
       transformMask:
