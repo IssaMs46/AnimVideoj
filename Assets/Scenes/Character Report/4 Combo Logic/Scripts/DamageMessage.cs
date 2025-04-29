@@ -2,14 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DamageMessage 
+public struct DamageMessage 
 {
-    public enum DamageType
-    {
-        Normal,
-        Sleep,
-        Paralysis
-    }
-
-    private  float amount;
+    public GameObject sender;
+    public  float amount;
 }

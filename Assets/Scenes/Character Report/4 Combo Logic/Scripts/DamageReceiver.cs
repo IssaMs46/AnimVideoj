@@ -2,19 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DamageReceiver : MonoBehaviour, IDamageReceiver<SleepDamage>, IDamageReceiver<ParalysisDamage>
+public class DamageReceiver : MonoBehaviour, IDamageReceiver<float>
 {
-   public void ReceiveDamage(SleepDamage damage)
-    {
-        throw new System.NotImplementedException();
-        //go to sleep
-    }
+       
+    
+   public void ReceiveDamage(float damage)
+   {
+        //reducir vida del personaje
+        //accionar muerte si la vida es baja
+        Debug.Log("muerto");
+   }
 
-    public void ReceiveDamage(ParalysisDamage damage)
-    {
-        throw new System.NotImplementedException();
-        //paralize
-    }
+    
 
 
 
