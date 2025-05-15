@@ -604,6 +604,7 @@ GameObject:
   - component: {fileID: 353032460}
   - component: {fileID: 353032459}
   - component: {fileID: 353032458}
+  - component: {fileID: 353032462}
   m_Layer: 9
   m_Name: Right Foot
   m_TagString: Untagged
@@ -724,6 +725,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 353032456}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &353032462
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 353032456}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a87d7af442cf6114fa936ec7cbcad092, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  defenseMultiplier: 1
 --- !u!4 &366731754 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8105029507721159049, guid: e2abcd283cd5ae148a3445190a45ff8a,
@@ -1178,7 +1192,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 515580858}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.12313673, y: -0.43063998, z: 0.059440907, w: 0.8921062}
+  m_LocalRotation: {x: 0.12313674, y: -0.43063998, z: 0.059440915, w: 0.8921062}
   m_LocalPosition: {x: 7.48, y: 3.43, z: -6.13}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1370,6 +1384,7 @@ GameObject:
   - component: {fileID: 653973165}
   - component: {fileID: 653973164}
   - component: {fileID: 653973163}
+  - component: {fileID: 653973167}
   m_Layer: 9
   m_Name: Chest
   m_TagString: Untagged
@@ -1490,6 +1505,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 653973161}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &653973167
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 653973161}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a87d7af442cf6114fa936ec7cbcad092, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  defenseMultiplier: 1
 --- !u!4 &658466332 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8105029507721159101, guid: e2abcd283cd5ae148a3445190a45ff8a,
@@ -1623,6 +1651,7 @@ GameObject:
   - component: {fileID: 841665891}
   - component: {fileID: 841665890}
   - component: {fileID: 841665889}
+  - component: {fileID: 841665893}
   m_Layer: 9
   m_Name: Left Leg
   m_TagString: Untagged
@@ -1743,6 +1772,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 841665887}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &841665893
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 841665887}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a87d7af442cf6114fa936ec7cbcad092, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  defenseMultiplier: 1
 --- !u!4 &853623872 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8105029507721159163, guid: e2abcd283cd5ae148a3445190a45ff8a,
@@ -2064,7 +2106,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1100924253}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.12313673, y: -0.43063998, z: 0.059440907, w: 0.8921062}
+  m_LocalRotation: {x: 0.12313674, y: -0.43063998, z: 0.059440915, w: 0.8921062}
   m_LocalPosition: {x: 7.48, y: 3.43, z: -6.13}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2091,6 +2133,7 @@ GameObject:
   - component: {fileID: 1116379219}
   - component: {fileID: 1116379218}
   - component: {fileID: 1116379217}
+  - component: {fileID: 1116379221}
   m_Layer: 9
   m_Name: Left Calf
   m_TagString: Untagged
@@ -2211,6 +2254,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1116379215}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1116379221
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1116379215}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a87d7af442cf6114fa936ec7cbcad092, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  defenseMultiplier: 1
 --- !u!4 &1130746804 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8105029507721158685, guid: e2abcd283cd5ae148a3445190a45ff8a,
@@ -2236,6 +2292,7 @@ GameObject:
   - component: {fileID: 1140342328}
   - component: {fileID: 1140342327}
   - component: {fileID: 1140342326}
+  - component: {fileID: 1140342330}
   m_Layer: 9
   m_Name: Left Foot
   m_TagString: Untagged
@@ -2357,6 +2414,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1140342324}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1140342330
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1140342324}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a87d7af442cf6114fa936ec7cbcad092, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  defenseMultiplier: 1
 --- !u!1 &1153181381
 GameObject:
   m_ObjectHideFlags: 0
@@ -3028,6 +3098,7 @@ GameObject:
   - component: {fileID: 1702592923}
   - component: {fileID: 1702592922}
   - component: {fileID: 1702592921}
+  - component: {fileID: 1702592925}
   m_Layer: 9
   m_Name: Waist
   m_TagString: Untagged
@@ -3148,6 +3219,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1702592919}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1702592925
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1702592919}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a87d7af442cf6114fa936ec7cbcad092, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  defenseMultiplier: 1
 --- !u!4 &1707850198 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8105029507721159089, guid: e2abcd283cd5ae148a3445190a45ff8a,
@@ -3185,6 +3269,7 @@ GameObject:
   - component: {fileID: 1764216348}
   - component: {fileID: 1764216347}
   - component: {fileID: 1764216346}
+  - component: {fileID: 1764216350}
   m_Layer: 9
   m_Name: Head
   m_TagString: Untagged
@@ -3305,6 +3390,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1764216344}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1764216350
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1764216344}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a87d7af442cf6114fa936ec7cbcad092, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  defenseMultiplier: 1.5
 --- !u!4 &1765418001 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8105029507721159081, guid: e2abcd283cd5ae148a3445190a45ff8a,
@@ -3551,6 +3649,7 @@ GameObject:
   - component: {fileID: 1898884807}
   - component: {fileID: 1898884806}
   - component: {fileID: 1898884805}
+  - component: {fileID: 1898884809}
   m_Layer: 9
   m_Name: Right Calf
   m_TagString: Untagged
@@ -3671,6 +3770,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1898884803}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1898884809
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1898884803}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a87d7af442cf6114fa936ec7cbcad092, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  defenseMultiplier: 1
 --- !u!1 &1940207436
 GameObject:
   m_ObjectHideFlags: 0
@@ -3684,6 +3796,7 @@ GameObject:
   - component: {fileID: 1940207440}
   - component: {fileID: 1940207439}
   - component: {fileID: 1940207438}
+  - component: {fileID: 1940207442}
   m_Layer: 9
   m_Name: Right Leg
   m_TagString: Untagged
@@ -3804,6 +3917,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1940207436}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1940207442
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1940207436}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a87d7af442cf6114fa936ec7cbcad092, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  defenseMultiplier: 1
 --- !u!4 &1948475823 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8105029507721159151, guid: e2abcd283cd5ae148a3445190a45ff8a,
