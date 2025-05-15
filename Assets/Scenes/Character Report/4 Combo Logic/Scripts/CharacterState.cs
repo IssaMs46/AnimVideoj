@@ -14,6 +14,7 @@ public class CharacterState : MonoBehaviour
     [SerializeField] private float currentHealt;
    
     private float currentHealth;
+    
 
     private void RegenerateStamina (float regenAmount)
     {
@@ -21,15 +22,15 @@ public class CharacterState : MonoBehaviour
         currentStamina = Mathf.Min(currentStamina + regenAmount, startStamina);
     }
 
-    public void DepleteHealth(float amount)
+    public void DepleteHealth(float amount, out bool zeroHealth)
     {
         currentHealt -= amount;
+        zeroHealth = false;
 
         if(currentHealt <=0)
         {
-#warning  TODO Death
-            //se murio
-            Debug.Log($"({name}) DEAD");
+
+            zeroHealth = true;
         }
     }
 
