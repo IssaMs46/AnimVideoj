@@ -1207,7 +1207,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 515580858}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.12313674, y: -0.43063998, z: 0.059440915, w: 0.8921062}
+  m_LocalRotation: {x: 0.12313673, y: -0.43063998, z: 0.059440907, w: 0.8921062}
   m_LocalPosition: {x: 7.48, y: 3.43, z: -6.13}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2154,7 +2154,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1100924253}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.12313674, y: -0.43063998, z: 0.059440915, w: 0.8921062}
+  m_LocalRotation: {x: 0.12313673, y: -0.43063998, z: 0.059440907, w: 0.8921062}
   m_LocalPosition: {x: 7.48, y: 3.43, z: -6.13}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -3032,7 +3032,19 @@ MonoBehaviour:
       m_Calls: []
   m_ActionEvents:
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 5dae16a9-9b55-4cdf-a4d9-bccddeb3d96b
     m_ActionName: Character/Move[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d]
   - m_PersistentCalls:

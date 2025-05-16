@@ -25,10 +25,10 @@ public class AttackController : MonoBehaviour
     {
         if (ctx.performed)
         {
-           if (Game.Instance.PlayerOne.CurrentStamina > 0)
-            {
+           //if (Game.Instance.PlayerOne.CurrentStamina > 0)
+           //{
                 anim.SetTrigger("LightAttack");
-            }
+           //}
                
         }
     }
@@ -38,10 +38,10 @@ public class AttackController : MonoBehaviour
         if (ctx.performed || ctx.canceled)
         {
 
-            if (Game.Instance.PlayerOne.CurrentStamina > 0)
-            {
+            //if (Game.Instance.PlayerOne.CurrentStamina > 0)
+            //{
                 anim.SetTrigger("HeavyAttack");
-            }
+            //}
                 
         }
     }
