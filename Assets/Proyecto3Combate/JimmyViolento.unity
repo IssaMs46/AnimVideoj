@@ -2112,7 +2112,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damageMessage:
     sender: {fileID: 1075911680}
-    amount: 1
+    amount: 6
     damageLevel: 0
 --- !u!65 &1075911682
 BoxCollider:
