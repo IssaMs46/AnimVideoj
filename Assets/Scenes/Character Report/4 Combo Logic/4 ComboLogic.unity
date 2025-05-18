@@ -1207,7 +1207,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 515580858}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.12313673, y: -0.43063998, z: 0.059440907, w: 0.8921062}
+  m_LocalRotation: {x: 0.12313674, y: -0.43063998, z: 0.059440915, w: 0.8921062}
   m_LocalPosition: {x: 7.48, y: 3.43, z: -6.13}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2154,7 +2154,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1100924253}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.12313673, y: -0.43063998, z: 0.059440907, w: 0.8921062}
+  m_LocalRotation: {x: 0.12313674, y: -0.43063998, z: 0.059440915, w: 0.8921062}
   m_LocalPosition: {x: 7.48, y: 3.43, z: -6.13}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2749,6 +2749,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 1961477392}
+    - targetCorrespondingSourceObject: {fileID: 8105029507720739863, guid: e2abcd283cd5ae148a3445190a45ff8a,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1961477394}
   m_SourcePrefab: {fileID: 100100000, guid: e2abcd283cd5ae148a3445190a45ff8a, type: 3}
 --- !u!4 &1333089432 stripped
 Transform:
@@ -4372,6 +4376,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ignoreDamage: 0
+--- !u!114 &1961477394
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1961477382}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48c468a2239add448b58fe8ac1e8f0e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startStamina: 30
+  staminaRegen: 20
+  currentStamina: 30
+  startHealth: 50
+  currentHealth: 0
 --- !u!4 &1963424915 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8105029507721159085, guid: e2abcd283cd5ae148a3445190a45ff8a,
@@ -4436,7 +4457,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damageMessage:
     sender: {fileID: 2041304980}
-    amount: 10
+    amount: 1
     damageLevel: 0
 --- !u!65 &2041304982
 BoxCollider:

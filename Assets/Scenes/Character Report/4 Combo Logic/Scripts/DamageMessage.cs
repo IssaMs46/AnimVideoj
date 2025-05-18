@@ -15,7 +15,7 @@ public struct DamageMessage
     }
 
     public GameObject sender;
-    public  float amount;
+    public float amount;
     public DamageLevel damageLevel;
 
 }

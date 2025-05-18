@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using Unity.VisualScripting;
 
 public class CharacterState : MonoBehaviour
 {
@@ -10,12 +11,16 @@ public class CharacterState : MonoBehaviour
 
     [SerializeField] private float currentStamina;
 
-    [SerializeField] private float startHealth;
-    [SerializeField] private float currentHealt;
+    [SerializeField] private float startHealth = 30f;
+    [SerializeField] private float currentHealth;
    
-    private float currentHealth;
     
-
+    
+    private void start()
+    {
+        startHealth = 30f;
+        currentHealth = startHealth;
+    }
     private void RegenerateStamina (float regenAmount)
     {
        
@@ -24,10 +29,10 @@ public class CharacterState : MonoBehaviour
 
     public void DepleteHealth(float amount, out bool zeroHealth)
     {
-        currentHealt -= amount;
+        currentHealth -= amount;
         zeroHealth = false;
 
-        if(currentHealt <=0)
+        if(currentHealth <=0)
         {
 
             zeroHealth = true;
