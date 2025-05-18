@@ -12,7 +12,7 @@ public class CharacterState : MonoBehaviour
     [SerializeField] private float currentStamina;
 
     [SerializeField] private float startHealth = 30f;
-    [SerializeField] private float currentHealth;
+    [SerializeField] private float currentHealth = 30f;
    
     
     
